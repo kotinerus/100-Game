@@ -6,7 +6,7 @@ const player0 = document.querySelector('.player--0');
 const player1 = document.querySelector('.player--1');
 const changePlayer = (currentPlayer) => currentPlayer==player0 ? currentScore = playerActiveStatus(player0,player1) : currentScore = playerActiveStatus(player1,player0);
 
-//POCZĄTEK DZIAŁANIA FUNKCJONALNOŚCI .ROLL-DICE
+
 function whichPlayerIsActive() {
  return player0.classList.contains('player--active') === true ? player0:player1;
 }
@@ -28,8 +28,6 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
   }
 });
 
-//KONIEC DZIAŁANIA FUNKCJONALNOŚCI .ROLL-DICE
-//POCZĄTEK FUNKCJONALNOŚCI .HOLD-DICE
 function hideElement(element){
   document.querySelector(element).classList.add('hidden')
 }
@@ -53,9 +51,7 @@ document.querySelector('.btn--hold').addEventListener('click', function(){
     changePlayer(gracz)
   }
 })
-//KONIEC FUNKCJONALNOŚCI .HOLD-DICE
 
-//RESET GAME BUTTON
 document.querySelector('.btn--new').addEventListener('click', function(){
   playerActiveStatus(player1,player0)
   player0.querySelector('.score').textContent=0;
